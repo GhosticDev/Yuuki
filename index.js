@@ -38,14 +38,14 @@ client.on("message", async message => {
 });
 
 client.on('guildCreate', async guild => {
-  client.channels.get('476506396544729088').send(`New server: **${guild.name}** (Owner: ${guild.owner.user.username})(Members: ${guild.memberCount})`);
+  let msg = "Thank you for adding me! :white_check_mark:\n- My prefix here is \`md!\`\n- You can see a list of commands by typing \`md!help\`\n- You can change my prefix with \`md!settings prefix\`\n- If you need help, feel free to join our support server at https://discord.gg/xrqhcA5";
+  guild.channels.filter(c => c.type === 'text').first().send(msg);
+  client.channels.get('483997700090757120').send(`New server: **${guild.name}** (Owner: ${guild.owner.user.username})(Members: ${guild.memberCount})`);
   let users = 0;
   for (let g of client.guilds.array()) {
     users += g.memberCount;
   }
   client.user.setActivity(`${users} users! md!help`, {type: 'Watching'});
-  let msg = "Thank you for adding me! :white_check_mark:\n- My prefix here is \`md!\`\n- You can see a list of commands by typing \`md!help\`\n- You can change my prefix with \`md!settings prefix\`\n- If you need help, feel free to join our support server at https://discord.gg/xrqhcA5";
-  guild.channels.filter(c => c.type === 'text').first().send(msg);
   client.channels.get('483785943292051474').edit({
     name: `Servers: ${client.guilds.size}`
   }).then(console.log).catch(console.log);
