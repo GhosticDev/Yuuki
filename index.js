@@ -6,9 +6,13 @@ const client = new Discord.Client();
 client.prefix = config.prefix;
 
 client.on("ready", () => {
+	let users = 0;
+	for (let g of client.guilds.array()) {
+		users += g.memberCount;
+	}
 	console.log("Bot on with " + client.users.size + " users and " + client.guilds.size + " servers!");
 	client.user.setActivity(`${client.users.size} users!`, {type: 'Watching'});
-	client.user.setActivity(`${users} users! md!help`, {type: 'Listening'});
+	client.user.setActivity(`${users} users! y!help`, {type: 'Watching'});
 		client.channels.get('483785943292051474').edit({
 		name: `Servers: ${client.guilds.size}`
 	}).then(console.log("'MiaDJ Servers' voice channel updated!")).catch(console.log);
