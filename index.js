@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+conficonst Discord = require('discord.js');
 const config = require("./config.json");
 const utils = require("./utils.js");
 
@@ -15,7 +15,7 @@ client.on("ready", () => {
 	client.user.setActivity(`${users} users! y!help`, {type: 'Watching'});
 		client.channels.get('483785943292051474').edit({
 		name: `Servers: ${client.guilds.size}`
-	}).then(console.log("'MiaDJ Servers' voice channel updated!")).catch(console.log);
+	}).then(console.log("'Servers' voice channel updated!")).catch(console.log);
 });
 
 client.on("message", async message => {
