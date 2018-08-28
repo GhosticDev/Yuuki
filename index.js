@@ -48,7 +48,7 @@ client.on('guildCreate', async guild => {
   client.user.setActivity(`${users} users! md!help`, {type: 'Watching'});
   client.channels.get('483785943292051474').edit({
     name: `Servers: ${client.guilds.size}`
-  }).then(console.log).catch(console.log);
+  }).then(console.log("'Servers' channel updated!")).catch(console.log);
 });
 
 client.on('guildDelete', async guild => {
@@ -60,7 +60,7 @@ client.on('guildDelete', async guild => {
   client.user.setActivity(`${users} users! md!help`, {type: 'Watching'});
   client.channels.get('483785943292051474').edit({
     name: `Servers: ${client.guilds.size}`
-  }).then(console.log).catch(console.log);
+  }).then(console.log("'Servers' channel updated!")).catch(console.log);
 });
 
 client.login(process.env.TOKEN);
