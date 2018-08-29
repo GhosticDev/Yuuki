@@ -38,7 +38,7 @@ client.on("message", async message => {
 });
 
 client.on('guildCreate', async guild => {
-  let msg = "Thank you for adding me! :white_check_mark:\n- My prefix here is \`y!\`\n- You can see a list of commands by typing \`y!help\`\n- You can change my prefix with \`y!settings prefix\`\n- If you need help, feel free to join our support server at https://discord.gg/nEs8uAZ";
+  let msg = "Thank you for adding me! :white_check_mark:\n- My prefix is \`y!\`\n- You can see a list of commands by typing \`y!help\`\n- If you need help, feel free to join our support server at https://discord.gg/nEs8uAZ";
   guild.channels.filter(c => c.type === 'text').first().send(msg);
   client.channels.get('483997700090757120').send(`New server: **${guild.name}** (Owner: ${guild.owner.user.username})(Members: ${guild.memberCount})`);
   let users = 0;
