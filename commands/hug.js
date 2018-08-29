@@ -22,11 +22,16 @@ exports.run = (client, message, args) => {
     return message.channel.send(emb);
   }
 
-  let mention = message.mentions.users.first();
+  let name = args[0];
+  try {
+    let mention = message.mentions.users.first();
+    name = mention.username;
+  } catch(e) {
+  }
 
   let embed = new Discord.RichEmbed()
     .setColor([6, 71, 205])
-    .setDescription("**" + user.username + "** hugged **" + mention.username + "**!")
+    .setDescription("**" + user.username + "** hugged **" + name + "**!")
     .setImage(random)
     .setTimestamp();
   message.channel.send(embed);
