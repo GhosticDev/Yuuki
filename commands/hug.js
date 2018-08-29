@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 
 exports.run = (client, message, args) => {
+  let user = message.author;
 
   let hug = ["https://i.imgur.com/Ozz7s5O.gif", "https://i.imgur.com/ahsOvVU.gif", "https://i.imgur.com/0CtHP6f.gif",
             "https://i.imgur.com/zZpkQUm.gif", "https://i.imgur.com/L5x46hH.gif", "https://i.imgur.com/oTsG1tr.gif",
@@ -12,7 +13,15 @@ exports.run = (client, message, args) => {
 
   let random = hug[Math.floor(Math.random() * hug.length)];
 
-  let user = message.author;
+  if (args.length === 0) {
+    let emb = new Discord.RichEmbed()
+      .setColor([6, 71, 205])
+      .setDescription("**" + client.user.username + "** hugged **" + user.username + "**!")
+      .setImage(random)
+      .setTimestamp();
+    return message.channel.send(emb);
+  }
+
   let mention = message.mentions.users.first();
 
   let embed = new Discord.RichEmbed()
