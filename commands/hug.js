@@ -22,7 +22,7 @@ exports.run = (client, message, args) => {
     return message.channel.send(emb);
   }
 
-  let name = args[0];
+  let name = args.join(" ");
   try {
     let mention = message.mentions.users.first();
     name = mention.username;
